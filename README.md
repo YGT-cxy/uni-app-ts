@@ -1,19 +1,24 @@
-## 项目名：管家
+## 项目名：uni-app-ts
 
 ## 项目文件目录说明
 ```javascript
 src
   -- api 后端api接口统一管理文件夹
   -- lib 引入的第三方库
+    -- colorui 第三方UI组件库
   -- pages 页面文件夹
   -- utils 工具类文件夹
+    -- minins.ts 混入vue文件，在需要混入的vue文件中，使用extends继承语法，继承即可
+    -- request.ts 封装了flyio网络请求库，在这里不使用axios，因为axios不兼容小程序端，所以使用flyio，也可以引入axios，通过uni-app的平台编译语法，引入不同的模块
   -- store vuex
-  -- static 静态资源目录
+  -- static 静态资源目录，在pages里的页面引入图片，通过`/static/images/**`引入即可，以`/static`为根目录
 ```
 
 ##  项目技术
 1. 使用uni-app框架开发
-2. 引入colorUI组件库
+2. 引入typescript语法
+3. 引入colorUI组件库
+4. request请求使用flyio库
 
 ## 组件的命令规则
 1. 组件的文件命名，不能使用单个单词，需要使用两个及多个单词的命名方式，使用小写的形式，用中划线 - 作为连接。
@@ -35,3 +40,6 @@ src
 	线上环境：`npm run build:mp-weixin`<br />
 	开发环境的小程序访问根目录中的 `dist/dev/mp-weixin` 文件夹即可	<br />
   线上环境的小程序访问根目录中的 `dist/build/mp-weixin` 文件夹即可	<br />
+
+## 存在的问题
+1. 在vue文件中使用`wx.`的前缀的API在HBuilderX工具中运行项目，会报错，没有找到wx模块。在命令行模式中使用 `npm` 命令编译项目，不会发生报错，且项目能编译成功。
