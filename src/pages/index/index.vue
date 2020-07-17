@@ -12,7 +12,11 @@
   import Minins from '@/utils/minins'
 
   @Component
-  export default class PageIndex extends Minins {}
+  export default class PageIndex extends Minins {
+    private mounted() {
+      console.log(wx)
+    }
+  }
 </script>
 
 <style lang="less">
