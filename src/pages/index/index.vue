@@ -11,10 +11,12 @@
   import { Component, Watch } from 'vue-property-decorator'
   import Minins from '@/utils/minins'
 
-  @Component({
-    name: 'Index'
-  })
-  export default class extends Minins {}
+  @Component
+  export default class PageIndex extends Minins {
+    private mounted() {
+      console.log(wx)
+    }
+  }
 </script>
 
 <style lang="less">
