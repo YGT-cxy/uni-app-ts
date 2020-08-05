@@ -25,6 +25,11 @@
     "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.0-26920200424005",
     "@dcloudio/uni-h5": "^2.0.0-26920200424005",
@@ -49,6 +54,8 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "^7.8.3",
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "@dcloudio/types": "^0.4.7",
     "@dcloudio/uni-cli-shared": "^2.0.0-26920200424005",
     "@dcloudio/uni-template-compiler": "^2.0.0-26920200424005",
@@ -63,6 +70,7 @@
     "babel-plugin-import": "^1.11.0",
     "commitizen": "^4.0.4",
     "cz-customizable": "^6.3.0",
+    "husky": "^4.2.5",
     "postcss-comment": "^2.0.0",
     "tslint": "^5.20.1",
     "typescript": "^3.8.3",
